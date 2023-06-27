@@ -6,7 +6,7 @@ volumes:
 services:
   double-take:
     container_name: double-take-alpr
-    image: sch0field9/double-take
+    image: https://github.com/Sch0field9/double-take.git
     restart: unless-stopped
     volumes:
       - double-take-alpr:/.storage
