@@ -1,14 +1,14 @@
 version: '3.7'
 
 volumes:
-  double-take:
+  double-take-alpr:
 
 services:
   double-take:
-    container_name: double-take
-    image: skrashevich/double-take
+    container_name: double-take-alpr
+    image: sch0field9/double-take
     restart: unless-stopped
     volumes:
-      - double-take:/.storage
+      - double-take-alpr:/.storage
     ports:
-      - 3000:3000
+      - 3003:3000
