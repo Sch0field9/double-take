@@ -27,36 +27,11 @@ module.exports.recognize = async ({ key }) => {
 };
 
 module.exports.train = ({ name, key }) => {
-  const { URL } = AISERVERALPR;
-  const formData = new FormData();
-  formData.append('image', fs.createReadStream(key));
-  formData.append('userid', name);
-
-  return axios({
-    method: 'post',
-    timeout: AISERVERALPR.TIMEOUT * 1000,
-    headers: {
-      ...formData.getHeaders(),
-    },
-    url: `${URL}/v1/vision/face/register`,
-    data: formData,
-  });
+return true;
 };
 
 module.exports.remove = ({ name }) => {
-  const { URL } = AISERVERALPR;
-  const formData = new FormData();
-  formData.append('userid', name);
-
-  return axios({
-    method: 'post',
-    timeout: AISERVERALPR.TIMEOUT * 1000,
-    url: `${URL}/v1/vision/face/delete`,
-    headers: {
-      ...formData.getHeaders(),
-    },
-    data: formData,
-  });
+return true;
 };
 
 module.exports.normalize = ({ camera, data }) => {
